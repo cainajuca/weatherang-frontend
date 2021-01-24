@@ -1,0 +1,14 @@
+.footer {
+    /* footer fixado no rodapé */
+    position: fixed;
+    bottom: 0;
+
+    /* texto à direita */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer span {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
