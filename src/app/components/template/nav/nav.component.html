@@ -2,13 +2,13 @@
     <mat-sidenav class="sidenav" mode="side" opened
         fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item>
+            <a mat-list-item routerLink="/">
                 <i class="material-icons">
                     home
                 </i>
                 Home
             </a>
-            <a mat-list-item>
+            <a mat-list-item routerLink="/search">
                 <i class="material-icons">
                     cloud_circle
                 </i>
@@ -16,6 +16,17 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+
+        <router-outlet></router-outlet>
+        <!-- 
+        <app-home></app-home>
+        <app-search></app-search> 
+        -->
+
+    </mat-sidenav-content>
+
 </mat-sidenav-container>
 
 <!--

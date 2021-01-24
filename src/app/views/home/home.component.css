@@ -1,0 +1,14 @@
+#sol-nuvem {
+    margin-top: 15px;
+}
+
+.home .title {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.home .subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+}
