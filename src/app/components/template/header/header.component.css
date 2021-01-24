@@ -11,16 +11,13 @@
 
 .header .logo {
     max-height: 50px;
+    margin-left: 20px;
 }
 
 .header .title-group {
-    padding-left: 25px;
+    padding-left: 40px;
 }
 
 .header .title-group i {
     padding-right: 5px;
-}
-
-#sol-nuvem {
-    margin: 30px;
 }
