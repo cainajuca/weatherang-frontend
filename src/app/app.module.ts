@@ -18,6 +18,8 @@ import { SearchComponent } from './views/search/search-weather/search.component'
 import { HistoryComponent } from './views/history/history.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherCrudComponent } from './views/weather-crud/weather-crud.component';
+import { WeatherCreateComponent } from './components/weather/weather-create/weather-create.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavComponent,
     HomeComponent,
     SearchComponent,
-    HistoryComponent
+    HistoryComponent,
+    WeatherCrudComponent,
+    // WeatherCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [WeatherCreateComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

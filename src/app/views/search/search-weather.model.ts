@@ -1,4 +1,5 @@
 export interface Weather {
+    success: Boolean
     name: String
     region: string
     country: string
