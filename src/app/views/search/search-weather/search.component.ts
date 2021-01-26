@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Weather } from './../search-weather.model';
+import { SearchWeatherService } from './../search-weather.service'
 
 @Component({
   selector: 'app-search',
@@ -7,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  // weathers: Weather[];
+  weather?: Weather;
+
+  constructor(private searchWeatherService: SearchWeatherService) { }
 
   ngOnInit(): void {
+    // p botar isso em um botão rever aula sobre createProduct
+    this.searchWeatherService.searchWeather().subscribe(weather => {
+      this.weather = weather
+      console.log(weather)
+    })
   }
-
-// o product-crud é um navigation entre Create, Read, Update e Delete
-// fazer aqui tudo oq o prof fizer em product-read
 
 }

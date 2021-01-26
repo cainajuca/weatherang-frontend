@@ -17,6 +17,8 @@ import { HomeComponent } from './views/home/home.component';
 import { SearchComponent } from './views/search/search-weather/search.component';
 import { HistoryComponent } from './views/history/history.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { HistoryComponent } from './views/history/history.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
