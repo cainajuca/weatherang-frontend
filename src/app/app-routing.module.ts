@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
-import { SearchComponent } from './views/search/search.component';
+import { SearchComponent } from './views/search/search-weather/search.component';
+import { HistoryComponent } from './views/history/history.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "search",
     component: SearchComponent
+  },
+  {
+    path: "history",
+    component: HistoryComponent
   }
 ];
 

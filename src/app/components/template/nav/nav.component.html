@@ -8,9 +8,17 @@
                 </i>
                 Home
             </a>
+
             <a mat-list-item routerLink="/search">
                 <i class="material-icons">
                     cloud_circle
+                </i>
+                Search
+            </a>
+
+            <a mat-list-item routerLink="/history">
+                <i class="material-icons">
+                    history
                 </i>
                 Search
             </a>
@@ -18,13 +26,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="content">
-
         <router-outlet></router-outlet>
-        <!-- 
-        <app-home></app-home>
-        <app-search></app-search> 
-        -->
-
     </mat-sidenav-content>
 
 </mat-sidenav-container>

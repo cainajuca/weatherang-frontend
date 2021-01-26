@@ -14,7 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { SearchComponent } from './views/search/search.component';
+import { SearchComponent } from './views/search/search-weather/search.component';
+import { HistoryComponent } from './views/history/history.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchComponent } from './views/search/search.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

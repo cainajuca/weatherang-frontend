@@ -12,4 +12,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+// o product-crud é um navigation entre Create, Read, Update e Delete
+// fazer aqui tudo oq o prof fizer em product-read
+
 }
