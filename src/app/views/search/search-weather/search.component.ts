@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Weather } from './../search-weather.model';
 import { SearchWeatherService } from './../search-weather.service'
-// import { Router } from '@angular/router'; // vc tava tentando tirar isso sem crashar
+// import { Router } from '@angular/router';
 
 import { WeatherCreateComponent } from './../../../components/weather/weather-create/weather-create.component';
 
@@ -14,15 +14,6 @@ import { WeatherCreateComponent } from './../../../components/weather/weather-cr
 export class SearchComponent implements OnInit {
 
   weather?: Weather
-
-  // weather: Weather = {
-  //   error: 0
-  //   name: '',
-  //   region: '',
-  //   country: '',
-  //   localtime: '',
-  //   weather_code: 0
-  // }
 
   timer: number = 0
   lastSearch?: Date
@@ -42,23 +33,43 @@ export class SearchComponent implements OnInit {
     
     this.searchWeatherService.read(this.searchField).subscribe(weather => {
 
-      this.weather = weather
-
-      console.log("API:")
-      console.log(weather)
-
-      // this.weather.country = weather[1][0]
-      // this.weather.localtime = weather.localtime
-      // this.weather.name = weather.name
-      // this.weather.region = weather.region
-      // this.weather.weather_code = weather.weather_code
-
-      // console.log("DB:")
-      // console.log(this.weather)
-
       // API necessita de 1 minuto entre requisições GET
       if(weather.error == undefined) {
-        this.weatherCreateComponent.createWeather(weather) // atualiza hisórico de pesquisa
+
+        let {
+          location: {
+            name: name,
+            region: region,
+            country: country,
+            localtime: localtime,
+            timezone_id: timezone_id
+          },
+          current: {
+            temperature: temperature,
+            weather_code: weather_code,
+            weather_icons: [weather_icon],
+            weather_descriptions: [weather_description]
+          }
+        } = weather
+  
+        this.weather = {
+          name: name,
+          region: region,
+          country: country,
+          localtime: localtime,
+          weather_code: weather_code,
+          timezone_id: timezone_id,
+          temperature: temperature,
+          weather_icon: weather_icon,
+          weather_description: weather_description
+        }
+  
+        // console.log('API:')
+        // console.log(weather)
+        // console.log('DB:')
+        // console.log(this.weather)
+
+        this.weatherCreateComponent.createWeather(this.weather) // atualiza hisórico de pesquisa
         this.lastSearch = new Date() // guarda momento da ultima pesquisa com êxito
       } else {
         if(this.lastSearch)

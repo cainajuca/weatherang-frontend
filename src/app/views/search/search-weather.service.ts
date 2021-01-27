@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Weather } from './search-weather.model';
 
 import { Observable } from 'rxjs';
 
@@ -14,10 +13,10 @@ export class SearchWeatherService {
 
   constructor(private http: HttpClient) { }
 
-  read(city: string): Observable<Weather> {
+  read(city: string): Observable<any> {
 
-    // só se pode usar esse get uma vez a cada minuto !! mostrar essa mensagem caso a pessoa queira pesquisar de novo rapido
-    return this.http.get<Weather>(
+    // só se pode usar esse get uma vez a cada minuto!!
+    return this.http.get<any>(
       this.baseUrl+
       this.access_key+
       '&query='+city
