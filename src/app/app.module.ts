@@ -16,14 +16,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './views/home/home.component';
 import { SearchComponent } from './views/search/search-weather/search.component';
-import { HistoryComponent } from './views/history/history.component';
-import { WeatherCrudComponent } from './views/weather-crud/weather-crud.component';
+import { WeatherReadComponent } from './components/weather/weather-read/weather-read.component';
+import { HistoryReadComponent } from './views/history/history-read/history-read.component';
+
+// COM READ PFV
 
 @NgModule({
   declarations: [
@@ -33,8 +36,8 @@ import { WeatherCrudComponent } from './views/weather-crud/weather-crud.componen
     NavComponent,
     HomeComponent,
     SearchComponent,
-    HistoryComponent,
-    WeatherCrudComponent
+    WeatherReadComponent,
+    HistoryReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { WeatherCrudComponent } from './views/weather-crud/weather-crud.componen
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [WeatherCreateComponent],
   bootstrap: [AppComponent]
