@@ -16,4 +16,8 @@ export class WeatherService {
   create(weather: Weather): Observable<Weather> {
     return this.http.post<Weather>(this.baseUrl, weather);
   }
+
+  read(): Observable<Weather[]> {
+    return this.http.get<Weather[]>(this.baseUrl);
+  }
 }
