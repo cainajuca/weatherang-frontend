@@ -17,7 +17,6 @@ export class WeatherReadComponent implements OnInit {
   ngOnInit(): void {
     this.weatherService.read().subscribe(weathers => {
       this.weathers = weathers
-      console.log(weathers)
     })
   }
 

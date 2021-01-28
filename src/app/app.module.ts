@@ -17,9 +17,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { HomeComponent } from './views/home/home.component';
 import { SearchComponent } from './views/search/search-weather/search.component';
@@ -51,7 +51,8 @@ import { HistoryReadComponent } from './views/history/history-read/history-read.
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [WeatherCreateComponent],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ export interface Weather {
     name: String
     region: string
     country: string
-    localtime: string
+    localtime: Date
     weather_code: number
     timezone_id: string
     temperature: number

@@ -1,1 +1,25 @@
-<p>weather-read works!</p>
+<mat-expansion-panel *ngFor="let weather of weathers">
+
+	<mat-expansion-panel-header>
+		<mat-panel-title>
+			{{ weather.name }}
+		</mat-panel-title>
+		<mat-panel-description>
+			{{ weather.localtime }}
+			
+		</mat-panel-description>
+	</mat-expansion-panel-header>
+
+	<div id="weather-data">
+		<div id="image">
+			<img src="{{ weather.weather_icon }}" alt="">
+			<p> {{ weather.weather_description }} </p>
+		</div>
+
+		<div>
+			<p>País: {{ weather.country }}</p>
+			<p>Temperatura: {{ weather.temperature }}°C</p>
+		</div>
+	</div>
+
+</mat-expansion-panel>

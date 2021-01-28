@@ -63,12 +63,7 @@ export class SearchComponent implements OnInit {
           weather_icon: weather_icon,
           weather_description: weather_description
         }
-  
-        // console.log('API:')
-        // console.log(weather)
-        // console.log('DB:')
-        // console.log(this.weather)
-
+        
         this.weatherCreateComponent.createWeather(this.weather) // atualiza hisórico de pesquisa
         this.lastSearch = new Date() // guarda momento da ultima pesquisa com êxito
       } else {
