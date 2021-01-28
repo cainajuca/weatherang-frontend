@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Weather } from './../search-weather.model';
 import { SearchWeatherService } from './../search-weather.service'
-// import { Router } from '@angular/router';
 
 import { WeatherCreateComponent } from './../../../components/weather/weather-create/weather-create.component';
 
@@ -13,17 +12,28 @@ import { WeatherCreateComponent } from './../../../components/weather/weather-cr
 
 export class SearchComponent implements OnInit {
 
-  weather?: Weather
+  weather: Weather = {
+    name: '',
+    region: '',
+    country: '',
+    localtime: '',
+    weather_code: 0,
+    timezone_id: '',
+    temperature: 0,
+    weather_icon: '',
+    weather_description: ''
+  }
 
   timer: number = 0
   lastSearch?: Date
+  api_error: Boolean = false
+  show_panel: Boolean = false
 
   searchField: string = ''
 
   constructor(
     private weatherCreateComponent: WeatherCreateComponent,
     private searchWeatherService: SearchWeatherService
-    // private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +45,9 @@ export class SearchComponent implements OnInit {
 
       // API necessita de 1 minuto entre requisições GET
       if(weather.error == undefined) {
+
+        this.api_error = false
+        this.show_panel = true
 
         let {
           location: {
@@ -67,19 +80,12 @@ export class SearchComponent implements OnInit {
         this.weatherCreateComponent.createWeather(this.weather) // atualiza hisórico de pesquisa
         this.lastSearch = new Date() // guarda momento da ultima pesquisa com êxito
       } else {
+        this.api_error = true
         if(this.lastSearch)
           this.timer = 60 - Math.floor((new Date().getTime() - this.lastSearch.getTime())/1000)
         else
           this.timer = -1
       }
     })
-
-    
-    // this.searchField = ''
   }
-
-  // cancel(): void {
-  //   this.router.navigate(['/'])
-  // }
-
 }

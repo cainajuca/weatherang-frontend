@@ -25,6 +25,7 @@ import { HomeComponent } from './views/home/home.component';
 import { SearchComponent } from './views/search/search-weather/search.component';
 import { WeatherReadComponent } from './components/weather/weather-read/weather-read.component';
 import { HistoryReadComponent } from './views/history/history-read/history-read.component';
+import { WeatherPanelComponent } from './components/template/weather-panel/weather-panel.component';
 
 // COM READ PFV
 
@@ -38,6 +39,7 @@ import { HistoryReadComponent } from './views/history/history-read/history-read.
     SearchComponent,
     WeatherReadComponent,
     HistoryReadComponent,
+    WeatherPanelComponent,
   ],
   imports: [
     BrowserModule,

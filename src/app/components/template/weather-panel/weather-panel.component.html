@@ -1,0 +1,25 @@
+<mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ weather.name }} - {{ weather.region }}
+        </mat-panel-title>
+        
+        <mat-panel-description>
+            {{ weather.localtime }}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div id="weather-data">
+
+        <div id="data">
+            <p>País: {{ weather.country }}</p>
+            <p>Temperatura: {{ weather.temperature }}°C</p>
+            <p> {{ weather.weather_description }} </p>
+        </div>
+
+        <img src="{{ weather.weather_icon }}" alt="">
+
+    </div>
+
+</mat-expansion-panel>

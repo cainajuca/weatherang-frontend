@@ -1,8 +1,10 @@
 <mat-card>
     <mat-card-title>Pesquise por qualquer cidade do mundo!</mat-card-title>
 
-    <p *ngIf="timer > 0">Tempo para próxima pesquisa: {{ timer }} segundos.</p>
-    <p *ngIf="timer == -1">Rodando a manivela da API...</p>
+    <div *ngIf="api_error" id="api-error">
+        <p *ngIf="timer > 0">Tempo para próxima pesquisa: {{ timer }} segundos.</p>
+        <p *ngIf="timer == -1">Rodando a manivela da API...</p>
+    </div>
 
     <form>
         <mat-form-field>
@@ -14,3 +16,5 @@
 <button mat-raised-button (click)="searchWeather()" color="accent">
     Pesquisar
 </button>
+
+<app-weather-panel *ngIf="show_panel" [weather]='weather'></app-weather-panel>

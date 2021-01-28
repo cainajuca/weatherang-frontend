@@ -1,0 +1,18 @@
+.mat-expansion-panel {
+    width: 450px;
+}
+
+img {
+    height: 85px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#weather-data {
+    display: flex;
+    vertical-align: auto;
+}
+
+#data {
+    width: 300px;
+}
