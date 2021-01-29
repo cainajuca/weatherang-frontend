@@ -28,7 +28,6 @@ export class SearchComponent implements OnInit {
   lastSearch?: Date
   api_error: Boolean = false
   show_panel: Boolean = false
-
   searchField: string = ''
 
   constructor(
@@ -49,6 +48,7 @@ export class SearchComponent implements OnInit {
         this.api_error = false
         this.show_panel = true
 
+        // Desestruturação do objeto original da API.
         let {
           location: {
             name: name,
@@ -65,6 +65,7 @@ export class SearchComponent implements OnInit {
           }
         } = weather
   
+        // Montagem do objeto no novo modelo.
         this.weather = {
           name: name,
           region: region,
@@ -78,12 +79,12 @@ export class SearchComponent implements OnInit {
         }
         
         this.weatherCreateComponent.createWeather(this.weather) // atualiza hisórico de pesquisa
-        this.lastSearch = new Date() // guarda momento da ultima pesquisa com êxito
+        this.lastSearch = new Date() // guarda momento da última pesquisa com êxito
       } else {
         this.api_error = true
         if(this.lastSearch)
           this.timer = 60 - Math.floor((new Date().getTime() - this.lastSearch.getTime())/1000)
-        else
+        else // Quando a pagina search é reaberta se perde a contagem do timer.
           this.timer = -1
       }
     })

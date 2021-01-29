@@ -2,25 +2,25 @@
     <mat-sidenav class="sidenav" mode="side" opened
         fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
+            <a mat-list-item routerLink="/" (click)="changeHeader('home')">
                 <i class="material-icons">
                     home
                 </i>
-                Home
+                Início
             </a>
 
-            <a mat-list-item routerLink="/search">
+            <a mat-list-item routerLink="/search" (click)="changeHeader('search')">
                 <i class="material-icons">
-                    cloud_circle
+                    wb_sunny
                 </i>
-                Search
+                Pesquisar
             </a>
 
-            <a mat-list-item routerLink="/history">
+            <a mat-list-item routerLink="/history" (click)="changeHeader('history')">
                 <i class="material-icons">
                     history
                 </i>
-                History
+                Histórico
             </a>
         </mat-nav-list>
     </mat-sidenav>
@@ -30,9 +30,3 @@
     </mat-sidenav-content>
 
 </mat-sidenav-container>
-
-<!--
-    sol: wb_sunny
-    nuvem1: cloud
-    nuvem2: cloud_circle
--->
