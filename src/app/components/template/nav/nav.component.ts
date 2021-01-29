@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +11,12 @@ export class NavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Output() attHeader = new EventEmitter<string>();
+
+  changeHeader(page: string): void {
+    this.attHeader.emit(page)
   }
 
 }

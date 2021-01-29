@@ -6,11 +6,25 @@
 	</span>
 
 	<span class="title-group">
-		<a>
+		<a *ngIf="this.page == 'home'">
 			<i class="material-icons">
 				home
 			</i>
-			Home
+			Início
+		</a>
+
+		<a *ngIf="this.page == 'search'">
+			<i class="material-icons">
+				wb_sunny
+			</i>
+			Pesquisar
+		</a>
+
+		<a *ngIf="this.page == 'history'">
+			<i class="material-icons">
+				history
+			</i>
+			History
 		</a>
 	</span>
 

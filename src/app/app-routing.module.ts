@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+// Components
 import { HomeComponent } from './views/home/home.component';
 import { SearchComponent } from './views/search/search-weather/search.component';
-import { HistoryComponent } from './views/history/history.component';
+import { HistoryReadComponent } from './views/history/history-read/history-read.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: "history",
-    component: HistoryComponent
+    component: HistoryReadComponent
   }
 ];
 

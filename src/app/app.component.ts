@@ -5,5 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
+  page: string = 'home'
+
+  attPage(nextPage: string) {
+    this.page = nextPage
+  }
   
 }

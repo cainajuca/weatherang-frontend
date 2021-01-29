@@ -1,17 +1,20 @@
-<button mat-raised-button (click)="searchWeather()" color="primary">
-<!-- <button mat-raised-button color="primary"> -->
+<mat-card>
+    <mat-card-title>Pesquise por qualquer cidade do mundo!</mat-card-title>
+
+    <div *ngIf="api_error" id="api-error">
+        <p *ngIf="timer > 0">Tempo para próxima pesquisa: {{ timer }} segundos.</p>
+        <p *ngIf="timer == -1">Rodando a manivela da API...</p>
+    </div>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="searchField" name="city">
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="searchWeather()" color="accent">
     Pesquisar
 </button>
 
-<button mat-raised-button (click)="cancel()">
-    Cancelar
-</button>
-
-
-
-<!--
-
-refazer a pasta search como é feito em starwars no github
-    api/weatherstack/weather.weatherstack.ts .html .css (?)
-
--->
+<app-weather-panel *ngIf="show_panel" [weather]='weather'></app-weather-panel>
