@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class WeatherService {
 
-  baseUrl = 'http://localhost:3001/weathers';
+  baseUrl = 'http://localhost:3001/api/weathers';
 
   constructor(private http: HttpClient) { }
 

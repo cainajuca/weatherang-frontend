@@ -1,7 +1,9 @@
-<div id="history">
+<div id="history" *ngIf="showHistory">
     <app-weather-read></app-weather-read>
 
-    <button mat-raised-button color="warn">
+    <button mat-raised-button (click)="eraseHistory()" color="warn">
         Apagar histórico
     </button>
 </div>
+
+<h1 *ngIf="!showHistory">Histórico limpo.</h1>
