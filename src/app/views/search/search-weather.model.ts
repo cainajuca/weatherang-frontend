@@ -1,13 +1,13 @@
 export interface Weather {
-    error?: number
+    error?: Number
     name: String
-    region: string
-    country: string
-    localtime: string
-    weather_code: number
-    timezone_id: string
-    temperature: number
-    weather_icon: string
-    weather_description: string
-    id?: number // id opcional
+    region: String
+    country: String
+    localtime: String
+    weather_code: Number
+    timezone_id: String
+    temperature: Number
+    weather_icon: String
+    weather_description: String
+    id?: Number // id opcional
 }

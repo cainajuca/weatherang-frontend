@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  // talvez tirar a atribuicao
   @Input() page?: string;
 
   constructor() { }
